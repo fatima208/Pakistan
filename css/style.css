@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.logo {
+  width: 100px; 
+  height: 50px; 
+  position: absolute; 
+  top: 0; 
+  left: 20px; 
+  cursor:pointer;
+}
+.logo-mob {
+  width: 150px; 
+  height: 50px; 
+  position: absolute; 
+  top: 0; 
+  right: 35%; 
+  cursor:pointer;
+}
+
+.background-container {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width:100%;
+  height:9% !important;
+  text-align: center;
+  padding: 10px 0; 
+  font-size: 1.5rem; 
+  color: white;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.footer{
+  position: absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height: 10px;
+  z-index:10;
+  padding: 10px 0; 
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.nav {
+  position: absolute;
+  bottom:20%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 11;
+}
+
+button { 
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hide content by default */
+.about, .services, .booking, .contact {
+  display: none;
+  position: absolute;
+  top: 45px; /* Adjust based on your layout */
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1000;
+}
+#about-btn:hover + .about,
+#services-btn:hover + .services,
+#booking-btn:hover + .booking,
+#contact-btn:hover + .contact {
+  display: block;
+}
+.about-mob, .services-mob, .booking-mob, .contact-mob {
+  display: none;
+  position: absolute;
+  top: 45px; /* Adjust based on your layout */
+  left:100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+#aboutmob-btn:hover + .about-mob,
+#servicesmob-btn:hover + .services-mob,
+#bookingmob-btn:hover + .booking-mob,
+#contactmob-btn:hover + .contact-mob {
+  display: block;
+}
+
+/* Show respective content on hover for each button */
+
+.hamburger{
+  display:none;
+}
+
+@media (max-width: 768px) ,(max-height: 768px){
+  .hamburger {
+    display: block;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    text-align: left;
+    padding: 10px 0;
+    font-size: 1.5rem;
+    color: white;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .content {
+    width: 50%;
+    padding: 15px;
+  }
+  .header {
+    display: none;
+   
+  }
+
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .para {
+    font-size: 0.9rem;
+  }
+
+  .nav {
+    gap: 15px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px),(max-height: 480px) {
+  .hamburger {
+    display: block;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    text-align: left;
+    padding: 10px 0;
+    font-size: 1.5rem;
+    color: white;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .content {
+    width: 95%;
+    padding: 10px;
+  }
+  .header {
+    display: none;
+    
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .para {
+    font-size: 0.8rem;
+  }
+
+  .nav {
+    gap: 5px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 4px 8px;
+  }
+}
+@media (min-width: 1025px) {
+  .header {
+    display: block; /* Show the header on desktop screens */
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.5rem;
+    color: white;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .hamburger {
+    display: none; /* Hide the hamburger menu on desktop */
+  }
+}
+
+
+/*delete from here if masla*/
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 45px; /* Adjust based on your layout */
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1000;
+}
+.dropdown button {
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
